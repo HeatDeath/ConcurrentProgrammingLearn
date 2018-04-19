@@ -1,25 +1,24 @@
-package com.heatdeath.concurency.demo.countDemo;
+package com.heatdeath.concurency.demo.count;
 
 import lombok.extern.slf4j.Slf4j;
 
-import javax.annotation.concurrent.ThreadSafe;
+import javax.annotation.concurrent.NotThreadSafe;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Author:  heatdeath
  * Date:    2018/4/10
- * Desc:    使用 Atomic 原子类
+ * Desc:
  */
 @Slf4j
-@ThreadSafe
-public class CountDemo2 {
+@NotThreadSafe
+public class CountDemo1 {
     public static int clientTotal = 5000;
     public static int threadTotal = 200;
-    public static AtomicInteger count = new AtomicInteger(0);
+    public static int count = 0;
 
     public static void main(String[] args) throws Exception {
         ExecutorService service = Executors.newCachedThreadPool();
@@ -48,7 +47,6 @@ public class CountDemo2 {
     }
 
     private static void add() {
-        count.incrementAndGet();
-//        count.getAndIncrement();
+        count++;
     }
 }

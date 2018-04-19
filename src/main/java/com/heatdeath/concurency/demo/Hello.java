@@ -1,7 +1,7 @@
 package com.heatdeath.concurency.demo;
 
 /**
- * Author:  yangyingqian
+ * Author:  HeatDeath
  * Date:    2018/4/10
  * Desc:
  */

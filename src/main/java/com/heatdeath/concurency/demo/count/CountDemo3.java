@@ -1,8 +1,8 @@
-package com.heatdeath.concurency.demo.countDemo;
+package com.heatdeath.concurency.demo.count;
 
 import lombok.extern.slf4j.Slf4j;
 
-import javax.annotation.concurrent.NotThreadSafe;
+import javax.annotation.concurrent.ThreadSafe;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -11,11 +11,11 @@ import java.util.concurrent.Semaphore;
 /**
  * Author:  heatdeath
  * Date:    2018/4/10
- * Desc:
+ * Desc:    使用 synchronized 关键字
  */
 @Slf4j
-@NotThreadSafe
-public class CountDemo1 {
+@ThreadSafe
+public class CountDemo3 {
     public static int clientTotal = 5000;
     public static int threadTotal = 200;
     public static int count = 0;
@@ -46,7 +46,7 @@ public class CountDemo1 {
         log.info("count:{}", count);
     }
 
-    private static void add() {
+    private static synchronized void add() {
         count++;
     }
 }

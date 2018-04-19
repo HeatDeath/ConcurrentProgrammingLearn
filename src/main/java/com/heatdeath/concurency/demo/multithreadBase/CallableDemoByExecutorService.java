@@ -1,11 +1,11 @@
-package com.heatdeath.concurency.demo.multithreadBaseDemo;
+package com.heatdeath.concurency.demo.multithreadBase;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.*;
 
 /**
- * Author:  yangyingqian
+ * Author:  HeatDeath
  * Date:    2018/4/10
  * Desc:    ExecutorService + Callable + Future
  */
